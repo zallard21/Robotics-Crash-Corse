@@ -44,7 +44,7 @@ void loop() {
   if(distance <= DESIRED_DISTANCE){
     raw_motor_control(0,0);
   } else {
-    forward(200);
+    raw_motor_control(1.1*200,200);
   }
   
 
