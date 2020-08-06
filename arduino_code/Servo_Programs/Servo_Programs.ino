@@ -27,17 +27,12 @@ void setup() {
   sensor.update();
 }
 
-double xAccel, yAccel, zAccel;
+double zAng;
 void loop() {
   sensor.update();
-  xAccel = sensor.get_accel('x');
-  yAccel = sensor.get_accel('y');
-  zAccel = sensor.get_accel('z');
+  zAng = sensor.get_ang_vel('z');
 
-  Serial.print("x: "); Serial.print(xAccel*10); Serial.print(" ");
-  Serial.print("y: "); Serial.print(yAccel*10); Serial.print(" ");
-  Serial.print("z: "); Serial.print(zAccel*10); Serial.print(" ");
-  Serial.println();
+  Serial.println(zAng);
 
-  delay(100);
+  servo1.write(90+(0.2*zAng));
 }
