@@ -24,7 +24,6 @@ void setup() {
 
   sensor.initialize();
   sensor.calibrate();
-  sensor.update();
 }
 
 void loop() {
